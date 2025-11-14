@@ -32,9 +32,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Your Vite build output folder
           path: ./build
 
   deploy:
